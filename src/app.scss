@@ -1,0 +1,69 @@
+$left-head-width: 200px;
+.gantt-main {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  .gantt-table {
+    border: none;
+    width: 100%;
+    tbody {
+      tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+      tr:nth-child(even) {
+        background-color: #fff;
+      }
+    }
+    .gantt-table__row {
+      height: max-content;
+      display: flex;
+      .gantt-table__row-content {
+        display: flex;
+        align-items: center;
+      }
+      .gantt-table__row__circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      .gantt-table__row__text {
+        font-size: 16px;
+        color: #757575;
+      }
+    }
+    .gantt-table__list {
+      width: calc(100% - 200px);
+      display: flex;
+      .gantt-table__item {
+        align-items: center;
+        display: flex;
+        font-size: 16px;
+        color: #757575;
+        padding: 32px 16px;
+        position: relative;
+        .gantt-table__rectangle {
+          font-size: 14px;
+          color: #8b8b8b;
+          height: 30px;
+          position: absolute;
+        }
+      }
+      .gantt-table__item + .gantt-table__item {
+        border-left: 1px solid #f8f8f8;
+      }
+    }
+    .gantt-table__list-head {
+      justify-content: space-around;
+    }
+    .gantt-table__list-content {
+      flex-flow: column;
+      
+    }
+    .gantt-table__row-fixed {
+      width: 200px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
