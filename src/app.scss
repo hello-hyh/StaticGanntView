@@ -1,4 +1,6 @@
-$left-head-width: 200px;
+body {
+  margin: 0;
+}
 .gantt-main {
   background: #fff;
   width: 100%;
@@ -6,13 +8,25 @@ $left-head-width: 200px;
   .gantt-table {
     border: none;
     width: 100%;
-    tbody {
+    .gantt-table-tbody {
       tr:nth-child(odd) {
         background-color: #fafafa;
       }
       tr:nth-child(even) {
         background-color: #fff;
       }
+      position: relative;
+    }
+    .gantt-table__circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .gantt-table__circle-head {
+      margin-right: 20px;
+    }
+    .gantt-table__circle-col {
+      margin: 0 10px;
     }
     .gantt-table__row {
       height: max-content;
@@ -20,12 +34,6 @@ $left-head-width: 200px;
       .gantt-table__row-content {
         display: flex;
         align-items: center;
-      }
-      .gantt-table__row__circle {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        margin-right: 20px;
       }
       .gantt-table__row__text {
         font-size: 16px;
@@ -40,25 +48,44 @@ $left-head-width: 200px;
         display: flex;
         font-size: 16px;
         color: #757575;
-        padding: 32px 16px;
+        padding: 32px 0;
         position: relative;
+        justify-content: center;
+        width: 100%;
         .gantt-table__rectangle {
-          font-size: 14px;
+          font-size: 12px;
           color: #8b8b8b;
-          height: 30px;
           position: absolute;
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+          .gantt-table-col_text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 20px;
+            line-height: 20px;
+          }
         }
+      }
+      .gantt-table__item-current {
+        color: #0046bb;
       }
       .gantt-table__item + .gantt-table__item {
         border-left: 1px solid #f8f8f8;
       }
+    }
+    .gant-table-hr {
+      width: 0px;
+      height: 100%;
+      border: 1px solid #0046bb;
+      position: absolute;
     }
     .gantt-table__list-head {
       justify-content: space-around;
     }
     .gantt-table__list-content {
       flex-flow: column;
-      
     }
     .gantt-table__row-fixed {
       width: 200px;
