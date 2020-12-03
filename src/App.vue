@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="gantt-main"
-    ref="mainRef"
-  >
+  <div class="gantt-main">
     <table class="gantt-table">
       <thead>
         <tr class="gantt-table__row">
